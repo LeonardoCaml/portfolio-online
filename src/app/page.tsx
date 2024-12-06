@@ -28,10 +28,18 @@ const projectsActive = [
     id: 1,
     image: tela,
     title: "Pitty Finder",
-    description: "Pitty Finder é um projeto de front-end para uma página de adoção de animais que conecta abrigos e ONGs de todo o brasil. Com ele, você pode encontrar diversos animais para adoção, além de contribuir com o funcionamento dos nossos abrigos afiliados por meio de doações e serviços voluntários",
-    link: "link: www.site-exemplo.com.br",
+    description:
+      "Uma página de adoção de animais que conecta abrigos e ONGs de todo o brasil. Com ele, você pode encontrar diversos animais para adoção, além de contribuir com o funcionamento dos nossos abrigos afiliados por meio de doações e serviços voluntários",
+    link: "https://pitty-finder.vercel.app/",
   },
-  { id: 2, image: code, title: "CodeLearn", description: "", link: "" },
+  {
+    id: 2,
+    image: code,
+    title: "CodeLearn",
+    description:
+      "Um blog pessoal para aspirantes na programação. Aqui você verá os principais post relacionados a area da programação, desenvolvido por pessoas experientes, afim de direcionar melhor quem está iniciando no ramo",
+    link: "https://blog-code-learner.vercel.app/",
+  },
 ];
 
 export default function Home() {
@@ -63,41 +71,34 @@ export default function Home() {
         </Stack>
       </Container>
       <div className="h-svh flex flex-col items-center justify-center">
-        <div>
-          <h1 className="text-4xl">Sobre mim</h1>
+        <div className="flex flex-col gap-5">
+          <h1 className="text-4xl font-bold">Sobre mim</h1>
           <p className="text-xl w-[60rem]">
             Sempre fui um entusiasta da tecnologia, desde muito cedo tive
-            contato com manuntenção de eletrônicos e outros programas de
-            computador. Porém, nunca encherguei o mercado da tecnologia como uma
-            profissão, apenas como um passa tempo, visão essa que foi mudando ao
-            longo dos anos.
+            contato com manuntenção de eletrônicos. Porém, nunca encherguei o
+            mercado da tecnologia como uma profissão, apenas como um passa
+            tempo.
             <br></br>
             <br></br>
-            Iniciei minha jornada no desenvolvimento web somente em 2021 após
-            conhecer de perto como funcionava a estrutura de um site e as
-            tecnologias que rodavam por trás de uma aplicação. Desde então,
-            comecei a desenvolver minhas próprias landing pages e aperfeiçoar
-            minhas skills como desenvolvedor Front-end afim de me tornar um
-            excelente profissional.
+            Em 2021, iniciei minha jornada na programação após conhecer de perto
+            como funcionava a estrutura de um site HTML e as tecnologias que
+            rodavam por trás de uma aplicação web. Desde então, comecei a
+            investir fortemente no meu aprendizado, desenvolvendo minhas
+            próprias landing pages e aperfeiçoar minhas skills como
+            desenvolvedor Front-end.
             <br></br>
             <br></br>
-            Em 2022 tive meu primeiro cliente, dono de uma empresa de
-            contabilidade que precisava de uma landing page para exibir seus
-            serviços e apresentar sua historia para potenciais clientes. Foi uma
-            excelente oportunidade de aplicar meus conhecimentos e compreender
-            onde precisava melhorar
-            <br></br>
-            <br></br>
-            Hoje, busco atuar como desenvolvedor front-end e, talvez em alguns
-            anos, começar a liderar meu proprio time de desenvolvedores
+            Estou sempre apto a novas experiências e acolher novos desafios na
+            minha carreira, assim poderei crescer e poder liderar meu próprio
+            time de desenvolvimento um dia!
           </p>
         </div>
       </div>
-      <div className="h-svh h-fit flex flex-col items-center justify-evenly py-10">
-        <h1 className="text-8xl my-10">Projetos</h1>
+      <div className="min-h-svh h-fit flex flex-col items-center justify-evenly py-10">
+        <h1 className="text-8xl my-10 font-bold">Projetos</h1>
         <Container
           maxWidth="lg"
-          className="flex flex-wrap justify-center gap-14 my-10"
+          className="flex flex-wrap justify-center gap-16 my-10"
         >
           {projectsActive.map((props) => (
             <Project

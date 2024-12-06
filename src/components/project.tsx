@@ -12,7 +12,7 @@ export default function Project({ image, title, description, link }) {
         alignItems: "center",
       }}
     >
-      <div className="w-1/2 overflow-hidden drop-shadow-xl rounded-xl">
+      <div className="w-1/2 overflow-hidden drop-shadow-lg rounded-xl">
         <Image
           src={image}
           className="duration-300 w-full h-72 object-cover hover:scale-110"
@@ -23,7 +23,7 @@ export default function Project({ image, title, description, link }) {
         <h1 className="font-bold text-3xl">{title}</h1>
         <p className="w-full h-40">{description}</p>
         <p className="text-xl font-semibold">
-          Confira Aqui: <a href={link}>{title}</a>
+          Confira Aqui: <a href={link} target="_blank">{title}</a>
         </p>
       </div>
     </Container>
