@@ -1,15 +1,38 @@
-import Image from "next/image";
-
+import Image, { StaticImageData } from "next/image";
 import title from "./assets/title.png";
-import javascript from "./assets/Javascript.png";
-import next from "./assets/nextjs.png";
-import redux from "./assets/redux.png";
-import react from "./assets/React.png";
-import tailwind from "./assets/Tailwind.png";
-import tela from "./assets/telainicial.png";
-
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
 import { Container, Stack } from "@mui/material";
+import technologies from "../constant/technologies";
+import Project from "@/components/project";
+import tela from "../app/assets/telainicial.png";
+import code from "../app/assets/codelearn.jpg";
+
+const icons = [
+  { id: 1, code: technologies.javascript },
+  { id: 2, code: technologies.react },
+  { id: 3, code: technologies.next },
+  { id: 4, code: technologies.redux },
+  { id: 5, code: technologies.tailwind },
+];
+
+type projectActiveProps = {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  link: string;
+};
+
+const projectsActive = [
+  {
+    id: 1,
+    image: tela,
+    title: "Pitty Finder",
+    description: "Pitty Finder é um projeto de front-end para uma página de adoção de animais que conecta abrigos e ONGs de todo o brasil. Com ele, você pode encontrar diversos animais para adoção, além de contribuir com o funcionamento dos nossos abrigos afiliados por meio de doações e serviços voluntários",
+    link: "link: www.site-exemplo.com.br",
+  },
+  { id: 2, image: code, title: "CodeLearn", description: "", link: "" },
+];
 
 export default function Home() {
   return (
@@ -20,19 +43,23 @@ export default function Home() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
+        <Navbar />
         <Stack sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Navbar />
-          <Image src={title} width={400} />
+          <Image src={title} width={550} alt="title" />
         </Stack>
-        <Stack>
-          <Image
-            className="transition-all hover:-translate-y-4 duration-500"
-            src={javascript}
-            width={50}
-          />
-          ;
+        <Stack direction="row" sx={{ marginBottom: 20, gap: 5 }}>
+          {icons.map((icon) => (
+            <Image
+              key={icon.id}
+              className="transition-all hover:-translate-y-4 duration-500"
+              src={icon.code}
+              width={80}
+              alt="icon"
+            />
+          ))}
         </Stack>
       </Container>
       <div className="h-svh flex flex-col items-center justify-center">
@@ -66,29 +93,22 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="h-svh flex flex-col items-center justify-evenly">
-        <h1 className="text-8xl">Projetos</h1>
-        <div className="flex gap-32">
-          <div className="w-80 h-96  border-2">
-            <div>
-              <Image src={tela} className="w-full h-56 object-cover" />
-            </div>
-            <div className="p-5 bg-gray-300">
-              <h1 className="text-2xl">título</h1>
-              <p className="text-lg">descrição basica do projeto</p>
-              <p className="text-lg">link: www.site-exemplo.com.br</p>
-            </div>
-          </div>
-
-          <div className="bg-gray-300 w-80 h-96 overflow-hidden border-2 border-black">
-            <div className="bg-white w-full h-56 border-black"></div>
-            <div className="p-5">
-              <h1 className="text-2xl">título</h1>
-              <p className="text-lg">descrição basica do projeto</p>
-              <p className="text-lg">link: www.site-exemplo.com.br</p>
-            </div>
-          </div>
-        </div>
+      <div className="h-svh h-fit flex flex-col items-center justify-evenly py-10">
+        <h1 className="text-8xl my-10">Projetos</h1>
+        <Container
+          maxWidth="lg"
+          className="flex flex-wrap justify-center gap-14 my-10"
+        >
+          {projectsActive.map((props) => (
+            <Project
+              key={props.id}
+              image={props.image}
+              title={props.title}
+              description={props.description}
+              link={props.link}
+            />
+          ))}
+        </Container>
       </div>
       <div className="h-svh flex flex-col items-center justify-center">
         <h1>Envie sua mensagem</h1>
