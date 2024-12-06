@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import title from "./assets/title.png";
 import Navbar from "@/components/Navbar";
 import { Container, Stack } from "@mui/material";
@@ -56,24 +56,23 @@ export default function Home() {
       >
         <Navbar />
         <Stack sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Image src={title} width={550} alt="title" />
+          <Image src={title} className="w-80 md:w-full" alt="title" />
         </Stack>
-        <Stack direction="row" sx={{ marginBottom: 20, gap: 5 }}>
+        <Stack direction="row" sx={{ marginBottom: 15, gap: 5 }}>
           {icons.map((icon) => (
             <Image
               key={icon.id}
-              className="transition-all hover:-translate-y-4 duration-500"
+              className="w-10 md:w-20 transition-all hover:-translate-y-4 duration-500"
               src={icon.code}
-              width={80}
               alt="icon"
             />
           ))}
         </Stack>
       </Container>
       <div className="h-svh flex flex-col items-center justify-center">
-        <div className="flex flex-col gap-5">
+        <Container maxWidth="lg">
           <h1 className="text-4xl font-bold">Sobre mim</h1>
-          <p className="text-xl w-[60rem]">
+          <p className="text-sm md:text-xl w-full">
             Sempre fui um entusiasta da tecnologia, desde muito cedo tive
             contato com manuntenção de eletrônicos. Porém, nunca encherguei o
             mercado da tecnologia como uma profissão, apenas como um passa
@@ -92,10 +91,10 @@ export default function Home() {
             minha carreira, assim poderei crescer e poder liderar meu próprio
             time de desenvolvimento um dia!
           </p>
-        </div>
+        </Container>
       </div>
       <div className="min-h-svh h-fit flex flex-col items-center justify-evenly py-10">
-        <h1 className="text-8xl my-10 font-bold">Projetos</h1>
+        <h1 className="text-4xl md:text-8xl my-10 font-bold">Projetos</h1>
         <Container
           maxWidth="lg"
           className="flex flex-wrap justify-center gap-16 my-10"
