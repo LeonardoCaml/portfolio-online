@@ -11,7 +11,7 @@ const link = [
 
 export default function Navbar() {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ position: "absolute", top: 1 }}>
       <div className="flex items-center justify-center h-28">
         <Image
           src={logo}

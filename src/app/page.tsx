@@ -1,44 +1,54 @@
 import Image from "next/image";
-import title from "./assets/title.png";
 import Navbar from "@/components/Navbar";
 import { Container, Stack } from "@mui/material";
-import technologies from "../constant/technologies";
+import { assets } from "../constant/technologies";
 import Project from "@/components/project";
-import tela from "../app/assets/telainicial.png";
+import pitty from "../app/assets/pitty.png";
 import code from "../app/assets/codelearn.jpg";
+import xbox from "../app/assets/xbox.png";
+import Footer from "@/components/Footer";
 
 const icons = [
-  { id: 1, code: technologies.javascript },
-  { id: 2, code: technologies.react },
-  { id: 3, code: technologies.next },
-  { id: 4, code: technologies.redux },
-  { id: 5, code: technologies.tailwind },
+  { id: 1, code: assets.javascript },
+  { id: 2, code: assets.react },
+  { id: 3, code: assets.next },
+  { id: 4, code: assets.redux },
+  { id: 5, code: assets.tailwind },
+  { id: 6, code: assets.styledComponent },
+  { id: 7, code: assets.materialUI },
 ];
-
-type projectActiveProps = {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-  link: string;
-};
 
 const projectsActive = [
   {
     id: 1,
-    image: tela,
+    image: pitty,
     title: "Pitty Finder",
-    description:
-      "Uma página de adoção de animais que conecta abrigos e ONGs de todo o brasil. Com ele, você pode encontrar diversos animais para adoção, além de contribuir com o funcionamento dos nossos abrigos afiliados por meio de doações e serviços voluntários",
+    description: [assets.javascript, assets.react, assets.materialUI],
     link: "https://pitty-finder.vercel.app/",
   },
   {
     id: 2,
     image: code,
     title: "CodeLearn",
-    description:
-      "Um blog pessoal para aspirantes na programação. Aqui você verá os principais post relacionados a area da programação, desenvolvido por pessoas experientes, afim de direcionar melhor quem está iniciando no ramo",
+    description: [
+      assets.javascript,
+      assets.react,
+      assets.next,
+      assets.styledComponent,
+    ],
     link: "https://blog-code-learner.vercel.app/",
+  },
+  {
+    id: 3,
+    image: xbox,
+    title: "Xbox Series X",
+    description: [
+      assets.javascript,
+      assets.next,
+      assets.tailwind,
+      assets.materialUI,
+    ],
+    link: "https://landind-page-xbox.vercel.app/",
   },
 ];
 
@@ -50,58 +60,48 @@ export default function Home() {
           height: "100vh",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
         }}
       >
         <Navbar />
         <Stack sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Image src={title} className="w-80 md:w-full" alt="title" />
-        </Stack>
-        <Stack direction="row" sx={{ marginBottom: 15, gap: 5 }}>
-          {icons.map((icon) => (
-            <Image
-              key={icon.id}
-              className="w-10 md:w-20 transition-all hover:-translate-y-4 duration-500"
-              src={icon.code}
-              alt="icon"
-            />
-          ))}
+          <p>Olá, eu sou</p>
+          <h1>Leonardo Camelo</h1>
+          <p>Desenvolvedor Frontend</p>
+          <button>Baixar currículo</button>
         </Stack>
       </Container>
       <div className="h-svh flex flex-col items-center justify-center">
         <Container maxWidth="lg">
-          <h1 className="text-4xl font-bold">Sobre mim</h1>
-          <p className="text-sm md:text-xl w-full">
-            Sempre fui um entusiasta da tecnologia, desde muito cedo tive
-            contato com manuntenção de eletrônicos. Porém, nunca encherguei o
-            mercado da tecnologia como uma profissão, apenas como um passa
-            tempo.
-            <br></br>
-            <br></br>
-            Em 2021, iniciei minha jornada na programação após conhecer de perto
-            como funcionava a estrutura de um site HTML e as tecnologias que
-            rodavam por trás de uma aplicação web. Desde então, comecei a
-            investir fortemente no meu aprendizado, desenvolvendo minhas
-            próprias landing pages e aperfeiçoar minhas skills como
-            desenvolvedor Front-end.
-            <br></br>
-            <br></br>
-            Estou sempre apto a novas experiências e acolher novos desafios na
-            minha carreira, assim poderei crescer e poder liderar meu próprio
-            time de desenvolvimento um dia!
+          <h1 className="text-4xl text-center font-bold mb-10">Sobre mim</h1>
+          <p className="text-sm md:text-xl text-center w-full">
+            Meu nome é Leonardo Camelo, sou um entusiasta da tecnologia desde
+            muito cedo, iniciei minha jornada na programação após conhecer de
+            perto a estrutura de um site HTML e as tecnologias que rodavam por
+            trás de uma aplicação web. Desde então, comecei a investir
+            fortemente no meu aprendizado, desenvolvendo minhas próprias landing
+            pages e aperfeiçoar minhas skills como desenvolvedor Front-end.
+            Atualmente sou freelancer como Frontend Developer e UI Designer.
+            Desenvolvo interfaces modernas e de alta qualidade, concentrado em
+            performance, responsividade e SEO
           </p>
+          <div>
+            <h1>email</h1>
+            <p>email@gmail.com</p>
+          </div>
         </Container>
       </div>
       <div className="min-h-svh h-fit flex flex-col items-center justify-evenly py-10">
         <h1 className="text-4xl md:text-8xl my-10 font-bold">Projetos</h1>
         <Container
-          maxWidth="lg"
-          className="flex flex-wrap justify-center gap-16 my-10"
+          maxWidth="md"
+          className="grid grid-cols-2 justify-center gap-16 my-10"
         >
           {projectsActive.map((props) => (
             <Project
               key={props.id}
+              id={props.id}
               image={props.image}
               title={props.title}
               description={props.description}
@@ -111,8 +111,18 @@ export default function Home() {
         </Container>
       </div>
       <div className="h-svh flex flex-col items-center justify-center">
-        <h1>Envie sua mensagem</h1>
+        <div className="flex gap-5">
+          {icons.map((icon) => (
+            <Image
+              key={icon.id}
+              className="w-10 md:w-20 transition-all hover:-translate-y-4 duration-500"
+              src={icon.code}
+              alt="icon"
+            />
+          ))}
+        </div>
       </div>
+      <Footer />
     </>
   );
 }
