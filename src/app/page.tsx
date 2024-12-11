@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { Container, Stack } from "@mui/material";
+import { Email, GitHub, Instagram } from "@mui/icons-material";
 import { assets } from "../constant/technologies";
 import Project from "@/components/project";
 import pitty from "../app/assets/pitty.png";
@@ -52,6 +53,17 @@ const projectsActive = [
   },
 ];
 
+const contact = [
+  {
+    id: 1,
+    title: "email",
+    subtitle: "leonardocamelo20@gmail.com",
+    icon: Email,
+  },
+  { id: 2, title: "instagram", subtitle: "@leonardo_cml", icon: Instagram },
+  { id: 3, title: "github", subtitle: "leozin_cml", icon: GitHub },
+];
+
 export default function Home() {
   return (
     <>
@@ -86,9 +98,13 @@ export default function Home() {
             Desenvolvo interfaces modernas e de alta qualidade, concentrado em
             performance, responsividade e SEO
           </p>
-          <div>
-            <h1>email</h1>
-            <p>email@gmail.com</p>
+          <div className="my-10 flex justify-between">
+            {contact.map((props) => (
+              <div key={props.id}>
+                <h1>{props.title}</h1>
+                <p>{props.subtitle}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </div>

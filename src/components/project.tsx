@@ -14,15 +14,21 @@ export default function Project({ image, title, description, link, id }) {
           alt="tela"
         />
       </div>
-      <div className="w-full h-4/5 flex flex-col justify-between gap-2">
+      <div className="w-full flex flex-col justify-between gap-2">
         <h1 className="font-bold text-2xl">{title}</h1>
         <p className="font-semibold">Tecnologias:</p>
-        <div className="flex gap-5">
+        <div className="flex gap-5 my-2">
           {description.map((icon) => (
-            <Image key={id} src={icon} alt="icon" width={30} />
+            <Image
+              key={id}
+              src={icon}
+              alt="icon"
+              width={30}
+              className="transition-all hover:scale-110 duration-500"
+            />
           ))}
         </div>
-        <div className="w-full flex justify-between gap-2">
+        <div className="w-full my-2 flex justify-between gap-2">
           <button className="bg-black border-solid border-2 border-black w-1/2 h-10 rounded-lg">
             <a
               href={link}
