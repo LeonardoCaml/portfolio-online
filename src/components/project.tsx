@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Project({ image, title, description, link, id }) {
+export default function Project({ image, title, description, link, github, id }) {
   return (
     <div className="flex flex-col items-center justify-between gap-4">
       <div className="w-full border-solid border-2 h-72 overflow-hidden rounded">
@@ -35,7 +35,7 @@ export default function Project({ image, title, description, link, id }) {
             </a>
           </button>
           <button className="border-solid border-2 border-black w-1/2 h-10 rounded-lg">
-            <a href="_blank" target="_blank" className="text-md font-semibold">
+            <a href={github} target="_blank" className="text-md font-semibold">
               Acessar repositório
             </a>
           </button>

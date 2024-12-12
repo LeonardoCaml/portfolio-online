@@ -33,6 +33,8 @@ const projectsActive = [
     title: "Pitty Finder",
     description: [assets.javascript, assets.react, assets.materialUI],
     link: "https://pitty-finder.vercel.app/",
+    github:
+      "https://github.com/LeonardoCaml/Pitty-Finder/tree/main/pitty-finder",
   },
   {
     id: 2,
@@ -45,6 +47,7 @@ const projectsActive = [
       assets.styledComponent,
     ],
     link: "https://blog-code-learner.vercel.app/",
+    github: "https://github.com/LeonardoCaml/blog",
   },
   {
     id: 3,
@@ -56,7 +59,8 @@ const projectsActive = [
       assets.tailwind,
       assets.materialUI,
     ],
-    link: "https://landind-page-xbox.vercel.app/",
+    link: "https://landing-page-xbox.vercel.app/",
+    github: "https://github.com/LeonardoCaml/landing-page-xbox",
   },
 ];
 
@@ -155,6 +159,7 @@ export default function Home() {
               image={props.image}
               title={props.title}
               description={props.description}
+              github={props.github}
               link={props.link}
             />
           ))}
