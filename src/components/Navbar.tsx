@@ -12,10 +12,10 @@ const link = [
 export default function Navbar() {
   return (
     <Container maxWidth="lg" sx={{ position: "absolute", top: 1 }}>
-      <div className="flex items-center justify-center h-28">
+      <div className="flex items-center justify-between h-28">
         <Image
           src={logo}
-          className="hidden md:block md:w-24 m-8 md:left-10 absolute"
+          className="hidden md:block md:w-24 m-8"
           alt="logo"
         />
         <ul className="flex items-center w-fit h-20 text-lg gap-20">

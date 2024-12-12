@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { Container, Stack } from "@mui/material";
-import { Email, GitHub, Instagram } from "@mui/icons-material";
+import { EmailOutlined, GitHub, Instagram } from "@mui/icons-material";
 import { assets } from "../constant/technologies";
 import Project from "@/components/project";
 import pitty from "../app/assets/pitty.png";
@@ -58,10 +58,10 @@ const contact = [
     id: 1,
     title: "email",
     subtitle: "leonardocamelo20@gmail.com",
-    icon: Email,
+    icon: <EmailOutlined />,
   },
-  { id: 2, title: "instagram", subtitle: "@leonardo_cml", icon: Instagram },
-  { id: 3, title: "github", subtitle: "leozin_cml", icon: GitHub },
+  { id: 2, title: "instagram", subtitle: "@leonardo_cml", icon: <Instagram /> },
+  { id: 3, title: "github", subtitle: "leozin_cml", icon: <GitHub /> },
 ];
 
 export default function Home() {
@@ -77,15 +77,23 @@ export default function Home() {
         }}
       >
         <Navbar />
-        <Stack sx={{ display: "flex", justifyContent: "space-between" }}>
-          <p>Olá, eu sou</p>
-          <h1>Leonardo Camelo</h1>
-          <p>Desenvolvedor Frontend</p>
-          <button>Baixar currículo</button>
+        <Stack
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "start",
+          }}
+        >
+          <p className="text-2xl">Olá, eu sou</p>
+          <h1 className="text-5xl">Leonardo Camelo</h1>
+          <p className="text-2xl">Desenvolvedor Frontend</p>
+          <button className="bg-red-200 p-2 rounded w-52">
+            Baixar currículo
+          </button>
         </Stack>
       </Container>
       <div className="h-svh flex flex-col items-center justify-center">
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" className="flex flex-col items-center">
           <h1 className="text-4xl text-center font-bold mb-10">Sobre mim</h1>
           <p className="text-sm md:text-xl text-center w-full">
             Meu nome é Leonardo Camelo, sou um entusiasta da tecnologia desde
@@ -98,10 +106,14 @@ export default function Home() {
             Desenvolvo interfaces modernas e de alta qualidade, concentrado em
             performance, responsividade e SEO
           </p>
-          <div className="my-10 flex justify-between">
+          <div className="w-full my-10 flex justify-between">
             {contact.map((props) => (
-              <div key={props.id}>
-                <h1>{props.title}</h1>
+              <div
+                key={props.id}
+                className=" w-1/2 flex flex-col items-center gap-2"
+              >
+                <div className="bg-gray-200 p-3 rounded-full">{props.icon}</div>
+                <h1 className="font-semibold text-md">{props.title}</h1>
                 <p>{props.subtitle}</p>
               </div>
             ))}
