@@ -72,9 +72,21 @@ const contact = [
 ];
 
 const services = [
-  { id: 1, icon: <Code />, service: "Criação de sites" },
-  { id: 2, icon: <Architecture />, service: "UI / UX Designer" },
-  { id: 3, icon: <PhoneIphone />, service: "Sites responsivos" },
+  {
+    id: 1,
+    icon: <Code sx={{ fontSize: "inherit" }} />,
+    service: "Criação de sites",
+  },
+  {
+    id: 2,
+    icon: <Architecture sx={{ fontSize: "inherit" }} />,
+    service: "UI / UX Designer",
+  },
+  {
+    id: 3,
+    icon: <PhoneIphone sx={{ fontSize: "inherit" }} />,
+    service: "Sites responsivos",
+  },
 ];
 
 export default function Home() {
@@ -119,9 +131,9 @@ export default function Home() {
                   key={props.id}
                   className=" w-1/2 flex flex-col items-center gap-2"
                 >
-                  <span className="bg-gray-200 p-3 rounded-full">
+                  <div className="bg-gray-200 p-3 rounded-full">
                     {props.icon}
-                  </span>
+                  </div>
                   <h1 className="font-semibold text-md">{props.title}</h1>
                   <p>{props.subtitle}</p>
                 </div>
@@ -131,7 +143,7 @@ export default function Home() {
         </Container>
       </Container>
       <div className="min-h-svh h-fit flex flex-col items-center justify-evenly py-10">
-        <h1 className="text-4xl md:text-8xl my-10 font-bold">Projetos</h1>
+        <h1 className="text-4xl text-center font-bold mb-10">Projetos</h1>
         <Container
           maxWidth="lg"
           className="grid grid-cols-2 justify-center gap-16 my-10"
@@ -152,15 +164,20 @@ export default function Home() {
         maxWidth="lg"
         className="h-svh flex flex-col items-center justify-center"
       >
-        <div className="w-full flex justify-between">
+        <h1 className="text-4xl text-center font-bold my-10">Serviços</h1>
+        <div className="w-full flex justify-between mb-10">
           {services.map((props) => (
-            <div key={props.id} className="bg-gray-200 w-80 h-60">
-              <span>{props.icon}</span>
-              <h1>{props.service}</h1>
+            <div
+              key={props.id}
+              className="flex flex-col items-start justify-center border border-b-4 border-black bg-gray-200 w-[370px] h-60 p-10"
+            >
+              <span className="text-5xl font-semibold">{props.icon}</span>
+              <h1 className="text-3xl font-semibold w-32">{props.service}</h1>
             </div>
           ))}
         </div>
-        <div className="flex gap-5">
+        <h1 className="text-4xl text-center font-bold my-10">Habilidades</h1>
+        <div className="w-full flex justify-between">
           {icons.map((icon) => (
             <Image
               key={icon.id}
