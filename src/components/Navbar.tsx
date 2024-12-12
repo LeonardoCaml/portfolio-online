@@ -13,12 +13,8 @@ export default function Navbar() {
   return (
     <Container maxWidth="lg">
       <div className="flex items-center justify-between h-28">
-        <Image
-          src={logo}
-          className="hidden md:block md:w-24 m-8"
-          alt="logo"
-        />
-        <ul className="flex items-center w-fit h-20 text-lg gap-20">
+        <Image src={logo} className="block w-20 m-8" alt="logo" />
+        <ul className="flex items-center w-fit h-20 text-lg gap-20 pr-10">
           {link.map((item) => (
             <li
               className="w-30 hidden md:block text-center cursor-pointer"
@@ -29,6 +25,7 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
+      <div className="w-full h-px bg-black opacity-20" />
     </Container>
   );
 }

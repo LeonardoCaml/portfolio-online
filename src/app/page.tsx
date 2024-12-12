@@ -101,7 +101,7 @@ export default function Home() {
         }}
       >
         <Navbar />
-        <div className="flex flex-col justify-between items-pç my-40">
+        <div className="flex flex-col justify-between items-pç my-48">
           <p className="text-2xl">Olá, eu sou</p>
           <h1 className="text-5xl">Leonardo Camelo</h1>
           <p className="text-2xl">Desenvolvedor Frontend</p>
@@ -113,9 +113,9 @@ export default function Home() {
           maxWidth="lg"
           className="flex flex-col items-center justify-center"
         >
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center my-20">
             <h1 className="text-4xl text-center font-bold mb-10">Sobre mim</h1>
-            <p className="text-sm md:text-xl text-center w-full">
+            <p className="text-xl text-center w-full">
               Meu nome é Leonardo Camelo, sou um entusiasta da tecnologia desde
               muito cedo, e iniciei minha jornada na programação após conhecer
               de perto a estrutura de um site HTML e as tecnologias que rodavam
@@ -125,7 +125,7 @@ export default function Home() {
               Developer e UI Designer. Desenvolvo interfaces modernas e de alta
               qualidade, concentrado em performance, responsividade e SEO
             </p>
-            <div className="w-full my-10 flex justify-between">
+            <div className="w-full my-20 flex justify-between">
               {contact.map((props) => (
                 <div
                   key={props.id}
@@ -142,7 +142,7 @@ export default function Home() {
           </div>
         </Container>
       </Container>
-      <div className="min-h-svh h-fit flex flex-col items-center justify-evenly py-10">
+      <div className="min-h-svh h-fit flex flex-col items-center justify-evenly">
         <h1 className="text-4xl text-center font-bold mb-10">Projetos</h1>
         <Container
           maxWidth="lg"
@@ -162,14 +162,14 @@ export default function Home() {
       </div>
       <Container
         maxWidth="lg"
-        className="h-svh flex flex-col items-center justify-center"
+        className="flex flex-col items-center justify-center my-20"
       >
         <h1 className="text-4xl text-center font-bold my-10">Serviços</h1>
         <div className="w-full flex justify-between mb-10">
           {services.map((props) => (
             <div
               key={props.id}
-              className="flex flex-col items-start justify-center border border-b-4 border-black bg-gray-200 w-[370px] h-60 p-10"
+              className="flex flex-col items-start justify-center border border-b-4 border-black bg-gray-200 w-[370px] h-60 p-10 gap-4"
             >
               <span className="text-5xl font-semibold">{props.icon}</span>
               <h1 className="text-3xl font-semibold w-32">{props.service}</h1>
