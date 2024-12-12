@@ -101,11 +101,11 @@ export default function Home() {
         }}
       >
         <Navbar />
-        <div className="flex flex-col justify-between items-pç my-48">
+        <div className="flex flex-col justify-between items-start gap-4 my-48">
           <p className="text-2xl">Olá, eu sou</p>
           <h1 className="text-5xl">Leonardo Camelo</h1>
           <p className="text-2xl">Desenvolvedor Frontend</p>
-          <button className="bg-red-200 p-2 rounded w-52">
+          <button className="border-solid border-2 border-black w-1/2 h-10 rounded-lg">
             Baixar currículo
           </button>
         </div>

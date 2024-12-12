@@ -17,7 +17,7 @@ export default function Navbar() {
         <ul className="flex items-center w-fit h-20 text-lg gap-20 pr-10">
           {link.map((item) => (
             <li
-              className="w-30 hidden md:block text-center cursor-pointer"
+              className="w-30 hidden md:block text-center cursor-pointer font-semibold"
               key={item.id}
             >
               {item.name}

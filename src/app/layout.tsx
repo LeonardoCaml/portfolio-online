@@ -5,7 +5,7 @@ import "./globals.css";
 const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
   display: "swap",
-  weight: ["300", "800"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const geistSans = localFont({
