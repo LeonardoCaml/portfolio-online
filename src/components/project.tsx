@@ -1,13 +1,9 @@
-import { Container } from "@mui/material";
 import Image from "next/image";
 
 export default function Project({ image, title, description, link, id }) {
   return (
-    <Container
-      maxWidth="lg"
-      className="w-[450px] flex flex-col items-center justify-between gap-4"
-    >
-      <div className="w-full border-solid border-2 h-60 overflow-hidden rounded">
+    <div className="flex flex-col items-center justify-between gap-4">
+      <div className="w-full border-solid border-2 h-72 overflow-hidden rounded">
         <Image
           src={image}
           className="duration-300 w-full h-72 object-cover hover:scale-105"
@@ -45,6 +41,6 @@ export default function Project({ image, title, description, link, id }) {
           </button>
         </div>
       </div>
-    </Container>
+    </div>
   );
 }
