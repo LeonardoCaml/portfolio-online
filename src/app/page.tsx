@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import { Container } from "@mui/material";
+import { Container, Tooltip } from "@mui/material";
 import {
   EmailOutlined,
   GitHub,
@@ -9,48 +8,59 @@ import {
   Architecture,
   PhoneIphone,
 } from "@mui/icons-material";
-import { assets } from "@/constant/technologies";
+import { icons } from "@/constant/technologies";
+import { images } from "@/constant/photos";
+import Navbar from "@/components/Navbar";
 import Project from "@/components/project";
-import pitty from "@/app/assets/pitty.png";
-import code from "@/app/assets/codelearn.jpg";
-import xbox from "@/app/assets/xbox.png";
 import Footer from "@/components/Footer";
 
-const icons = [
-  { id: 1, code: assets.html, name: "Html" },
-  { id: 2, code: assets.css, name: "Css" },
-  { id: 3, code: assets.javascript, name: "Javascript" },
-  { id: 4, code: assets.react, name: "ReactJS" },
-  { id: 5, code: assets.next, name: "NextJS" },
-  { id: 6, code: assets.tailwind, name: "Tailwind" },
-  { id: 7, code: assets.redux, name: "Redux" },
-  { id: 8, code: assets.styledComponents, name: "Styled Components" },
-  { id: 9, code: assets.materialUI, name: "Material UI" },
+const technologies = [
+  { id: 1, code: icons.html, name: "Html" },
+  { id: 2, code: icons.css, name: "Css" },
+  { id: 3, code: icons.javascript, name: "Javascript" },
+  { id: 4, code: icons.react, name: "ReactJS" },
+  { id: 5, code: icons.next, name: "NextJS" },
+  { id: 6, code: icons.tailwind, name: "Tailwind" },
+  { id: 7, code: icons.redux, name: "Redux" },
+  { id: 8, code: icons.styledComponents, name: "Styled Components" },
+  { id: 9, code: icons.materialUI, name: "Material UI" },
 ];
 
 const projectsActive = [
   {
     id: 1,
-    image: pitty,
+    image: images.PittyFinder,
     title: "Pitty Finder",
-    description: [assets.javascript, assets.react],
+    description: [icons.javascript, icons.html, icons.css, icons.react],
     link: "https://pitty-finder.vercel.app/",
     github:
       "https://github.com/LeonardoCaml/Pitty-Finder/tree/main/pitty-finder",
   },
   {
     id: 2,
-    image: code,
+    image: images.CodeLearner,
     title: "CodeLearn",
-    description: [assets.javascript, assets.react, assets.next],
+    description: [
+      icons.javascript,
+      icons.html,
+      icons.css,
+      icons.react,
+      icons.styledComponents,
+    ],
     link: "https://blog-code-learner.vercel.app/",
     github: "https://github.com/LeonardoCaml/blog",
   },
   {
     id: 3,
-    image: xbox,
+    image: images.SiteXbox,
     title: "Xbox Series X",
-    description: [assets.javascript, assets.next, assets.tailwind],
+    description: [
+      icons.javascript,
+      icons.html,
+      icons.css,
+      icons.next,
+      icons.tailwind,
+    ],
     link: "https://landing-page-xbox.vercel.app/",
     github: "https://github.com/LeonardoCaml/landing-page-xbox",
   },
@@ -182,13 +192,14 @@ export default function Home() {
         <div className="w-full flex flex-col items-center justify-center my-10">
           <h1 className="text-4xl text-center font-bold my-10">Habilidades</h1>
           <div className="w-full flex justify-between">
-            {icons.map((icon) => (
-              <Image
-                key={icon.id}
-                className="w-10 md:w-20 transition-all hover:-translate-y-4 duration-500"
-                src={icon.code}
-                alt="icon"
-              />
+            {technologies.map((icon) => (
+              <Tooltip title={icon.name} arrow key={icon.id}>
+                <Image
+                  className="w-20 transition-all hover:scale-[1.2] duration-500"
+                  src={icon.code}
+                  alt="icon"
+                />
+              </Tooltip>
             ))}
           </div>
         </div>

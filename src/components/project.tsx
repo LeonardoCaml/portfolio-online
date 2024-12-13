@@ -20,7 +20,6 @@ export default function Project({ image, title, description, link, github, id })
               src={icon}
               alt="icon"
               width={30}
-              className="transition-all hover:scale-110 duration-500"
             />
           ))}
         </div>

@@ -9,7 +9,7 @@ import styledComponents from "../../public/styledComponents.svg";
 import materialUI from "../../public/materialUI.svg";
 import { StaticImageData } from "next/image";
 
-export const assets: {[key: string] : string | StaticImageData } = {
+export const icons: {[key: string] : string | StaticImageData } = {
   javascript,
   next,
   redux,
