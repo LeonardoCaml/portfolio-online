@@ -3,10 +3,11 @@ import logo from "../app/assets/logo.png";
 import { Container } from "@mui/material";
 
 const link = [
-  { id: 1, name: "home" },
+  { id: 1, name: "Início" },
   { id: 2, name: "sobre mim" },
   { id: 3, name: "projetos" },
-  { id: 4, name: "contato" },
+  { id: 4, name: "Serviços" },
+  { id: 5, name: "Habilidades" },
 ];
 
 export default function Navbar() {
@@ -25,7 +26,6 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="w-full h-px bg-black opacity-20" />
     </Container>
   );
 }
