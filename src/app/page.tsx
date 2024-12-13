@@ -108,17 +108,26 @@ export default function Home() {
       >
         <Navbar />
         <div className="flex items-center justify-center">
-          <div className="h-48 flex flex-col justify-between items-start gap-4 my-48">
+          <div className="h-48 flex flex-col justify-between items-start gap-2 my-48">
             <p className="text-2xl">Olá, eu sou</p>
             <h1 className="text-5xl">Leonardo Camelo</h1>
             <p className="text-2xl">Desenvolvedor Frontend</p>
-            <a
-              href="/curriculo.pdf"
-              download="Leonardo_Camelo_Dev.pdf"
-              className="flex items-center justify-center border-solid border-2 border-black w-1/2 h-10 rounded-lg"
-            >
-              Baixar currículo
-            </a>
+            <div className="w-full flex gap-2 mt-2">
+              <a
+                href="/curriculo.pdf"
+                download="Leonardo_Camelo_Dev.pdf"
+                className="flex items-center justify-center border-solid border-2 border-black w-1/2 h-10 rounded-lg font-semibold"
+              >
+                Baixar currículo
+              </a>
+              <a
+                href="https://github.com/LeonardoCaml"
+                target="_blank"
+                className="flex items-center justify-center border-solid border-2 border-black bg-black text-white w-1/2 h-10 rounded-lg font-semibold"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
           <div>
             <div className="flex items-center justify-center overflow-hidden h-[550px]">
