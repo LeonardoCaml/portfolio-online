@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "noEmit": true,
     "strict": false,
     "allowJs": true,
@@ -10,9 +11,9 @@
     "target": "ESNext",
     "moduleResolution": "node",
     "paths": {
-      "@/*": ["./src/*"],
-      "@image": ["./src/app/assets/*"],
-      "@components": ["./src/components/*"]
+      "@/*": ["src/*"],
+      "@image": ["src/app/assets/*"],
+      "@components": ["src/components/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true,

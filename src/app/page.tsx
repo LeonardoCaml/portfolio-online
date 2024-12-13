@@ -9,21 +9,23 @@ import {
   Architecture,
   PhoneIphone,
 } from "@mui/icons-material";
-import { assets } from "../constant/technologies";
+import { assets } from "@/constant/technologies";
 import Project from "@/components/project";
-import pitty from "../app/assets/pitty.png";
-import code from "../app/assets/codelearn.jpg";
-import xbox from "../app/assets/xbox.png";
+import pitty from "@/app/assets/pitty.png";
+import code from "@/app/assets/codelearn.jpg";
+import xbox from "@/app/assets/xbox.png";
 import Footer from "@/components/Footer";
 
 const icons = [
-  { id: 1, code: assets.javascript },
-  { id: 2, code: assets.react },
-  { id: 3, code: assets.next },
-  { id: 4, code: assets.redux },
-  { id: 5, code: assets.tailwind },
-  { id: 6, code: assets.styledComponent },
-  { id: 7, code: assets.materialUI },
+  { id: 1, code: assets.html, name: "Html" },
+  { id: 2, code: assets.css, name: "Css" },
+  { id: 3, code: assets.javascript, name: "Javascript" },
+  { id: 4, code: assets.react, name: "ReactJS" },
+  { id: 5, code: assets.next, name: "NextJS" },
+  { id: 6, code: assets.tailwind, name: "Tailwind" },
+  { id: 7, code: assets.redux, name: "Redux" },
+  { id: 8, code: assets.styledComponents, name: "Styled Components" },
+  { id: 9, code: assets.materialUI, name: "Material UI" },
 ];
 
 const projectsActive = [
@@ -31,7 +33,7 @@ const projectsActive = [
     id: 1,
     image: pitty,
     title: "Pitty Finder",
-    description: [assets.javascript, assets.react, assets.materialUI],
+    description: [assets.javascript, assets.react],
     link: "https://pitty-finder.vercel.app/",
     github:
       "https://github.com/LeonardoCaml/Pitty-Finder/tree/main/pitty-finder",
@@ -40,12 +42,7 @@ const projectsActive = [
     id: 2,
     image: code,
     title: "CodeLearn",
-    description: [
-      assets.javascript,
-      assets.react,
-      assets.next,
-      assets.styledComponent,
-    ],
+    description: [assets.javascript, assets.react, assets.next],
     link: "https://blog-code-learner.vercel.app/",
     github: "https://github.com/LeonardoCaml/blog",
   },
@@ -53,12 +50,7 @@ const projectsActive = [
     id: 3,
     image: xbox,
     title: "Xbox Series X",
-    description: [
-      assets.javascript,
-      assets.next,
-      assets.tailwind,
-      assets.materialUI,
-    ],
+    description: [assets.javascript, assets.next, assets.tailwind],
     link: "https://landing-page-xbox.vercel.app/",
     github: "https://github.com/LeonardoCaml/landing-page-xbox",
   },
@@ -109,9 +101,13 @@ export default function Home() {
           <p className="text-2xl">Olá, eu sou</p>
           <h1 className="text-5xl">Leonardo Camelo</h1>
           <p className="text-2xl">Desenvolvedor Frontend</p>
-          <button className="border-solid border-2 border-black w-1/2 h-10 rounded-lg">
+          <a
+            href="/curriculo.pdf"
+            download="Leonardo_Camelo_Dev.pdf"
+            className="flex items-center justify-center border-solid border-2 border-black w-1/2 h-10 rounded-lg"
+          >
             Baixar currículo
-          </button>
+          </a>
         </div>
         <Container
           maxWidth="lg"
@@ -167,30 +163,34 @@ export default function Home() {
       </div>
       <Container
         maxWidth="lg"
-        className="flex flex-col items-center justify-center my-20"
+        className="h-1/2 flex flex-col items-center justify-center my-10"
       >
-        <h1 className="text-4xl text-center font-bold my-10">Serviços</h1>
-        <div className="w-full flex justify-between mb-10">
-          {services.map((props) => (
-            <div
-              key={props.id}
-              className="flex flex-col items-start justify-center border border-b-4 border-black bg-gray-200 w-[370px] h-60 p-10 gap-4"
-            >
-              <span className="text-5xl font-semibold">{props.icon}</span>
-              <h1 className="text-3xl font-semibold w-32">{props.service}</h1>
-            </div>
-          ))}
+        <div className="w-full flex flex-col items-center justify-center my-10">
+          <h1 className="text-4xl text-center font-bold my-10">Serviços</h1>
+          <div className="w-full flex justify-between mb-10">
+            {services.map((props) => (
+              <div
+                key={props.id}
+                className="flex flex-col items-start justify-center border border-b-4 border-black bg-gray-200 w-[370px] h-60 p-10 gap-4"
+              >
+                <span className="text-5xl font-semibold">{props.icon}</span>
+                <h1 className="text-3xl font-semibold w-32">{props.service}</h1>
+              </div>
+            ))}
+          </div>
         </div>
-        <h1 className="text-4xl text-center font-bold my-10">Habilidades</h1>
-        <div className="w-full flex justify-between">
-          {icons.map((icon) => (
-            <Image
-              key={icon.id}
-              className="w-10 md:w-20 transition-all hover:-translate-y-4 duration-500"
-              src={icon.code}
-              alt="icon"
-            />
-          ))}
+        <div className="w-full flex flex-col items-center justify-center my-10">
+          <h1 className="text-4xl text-center font-bold my-10">Habilidades</h1>
+          <div className="w-full flex justify-between">
+            {icons.map((icon) => (
+              <Image
+                key={icon.id}
+                className="w-10 md:w-20 transition-all hover:-translate-y-4 duration-500"
+                src={icon.code}
+                alt="icon"
+              />
+            ))}
+          </div>
         </div>
       </Container>
       <Footer />
