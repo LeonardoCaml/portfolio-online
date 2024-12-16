@@ -15,18 +15,7 @@ export default function HomePage() {
         <Navbar />
         <Home />
         <AboutMe />
-      </Container>
-      <Drafts />
-      <Container
-        maxWidth="lg"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          marginBottom: 10,
-        }}
-      >
+        <Drafts />
         <Services />
         <Skills />
       </Container>

@@ -24,11 +24,11 @@ export default function Services() {
       <h1 className="text-2xl md:text-4xl text-center font-bold my-10">
         Serviços
       </h1>
-      <div className="md:w-full flex flex-col md:flex-row justify-between md:mb-10 gap-5 md:gap-0">
+      <div className="w-full flex flex-col md:flex-row justify-between md:mb-10 gap-5 md:gap-0">
         {services.map((props) => (
           <div
             key={props.id}
-            className="flex flex-col items-start justify-center border border-b-4 border-black bg-gray-200 w-80 md:w-[370px] h-60 p-10 gap-4"
+            className="flex flex-col items-start justify-center border border-b-4 border-black bg-gray-200 w-full md:w-[370px] h-60 p-10 gap-4"
           >
             <span className="text-5xl font-semibold">{props.icon}</span>
             <h1 className="text-2xl md:text-3xl font-semibold w-24 md:w-32">

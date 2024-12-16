@@ -16,19 +16,21 @@ const technologies = [
 
 export default function Skills() {
   return (
-    <div className="w-full flex flex-col items-center justify-center my-10">
+    <div className="flex flex-col items-center justify-center my-10">
       <h1 className="text-2xl md:text-4xl text-center font-bold my-10">
         Habilidades
       </h1>
-      <div className="bg-red-200 w-96 md:w-full grid grid-cols-3 gap-6 ">
+      <div className="w-80 md:w-full grid grid-cols-3 md:flex justify-center gap-6">
         {technologies.map((icon) => (
-          <Tooltip title={icon.name} arrow key={icon.id}>
-            <Image
-              className="w-1/2 transition-all hover:scale-[1.2] duration-500"
-              src={icon.code}
-              alt="icon"
-            />
-          </Tooltip>
+          <div key={icon.id} className="flex justify-center">
+            <Tooltip title={icon.name} arrow>
+              <Image
+                className="w-1/2 md:w-20 transition-all hover:scale-[1.2] duration-500"
+                src={icon.code}
+                alt="icon"
+              />
+            </Tooltip>
+          </div>
         ))}
       </div>
     </div>

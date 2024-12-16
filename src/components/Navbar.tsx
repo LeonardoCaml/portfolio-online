@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <Container maxWidth="lg">
-      <div className="flex items-center justify-between h-20 md:h-28">
+      <div className="w-full flex items-center justify-between h-20 md:h-28">
         <Image src={logo} className="w-14 md:w-20" alt="logo" />
         <ul className="hidden md:flex items-center h-20 text-lg">
           {link.map((item) => (
