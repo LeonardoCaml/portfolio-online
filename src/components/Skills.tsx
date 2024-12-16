@@ -20,11 +20,11 @@ export default function Skills() {
       <h1 className="text-2xl md:text-4xl text-center font-bold my-10">
         Habilidades
       </h1>
-      <div className="w-96 md:w-full flex flex-wrap justify-between gap-6 ">
+      <div className="bg-red-200 w-96 md:w-full grid grid-cols-3 gap-6 ">
         {technologies.map((icon) => (
           <Tooltip title={icon.name} arrow key={icon.id}>
             <Image
-              className="w-20 transition-all hover:scale-[1.2] duration-500"
+              className="w-1/2 transition-all hover:scale-[1.2] duration-500"
               src={icon.code}
               alt="icon"
             />
