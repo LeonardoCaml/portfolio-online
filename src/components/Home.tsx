@@ -3,7 +3,7 @@ import { images } from "@/constant/photos";
 
 export default function Home() {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center">
+    <div className="md:h-[500px] flex flex-col md:flex-row items-center justify-between md:justify-center">
       <div className="h-20 md:h-48 w-4/5 md:w-96 flex flex-col justify-between items-start gap-2 m-16 md:my-48">
         <p className="text-2xl">Olá, eu sou</p>
         <h1 className="text-5xl">Leonardo Camelo</h1>
@@ -26,7 +26,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <div className="flex items-center justify-center overflow-hidden h-[550px]">
+        <div className="mt-20 md:m-0 flex items-center justify-center">
           <Image width={600} src={images.Ilustraçao} alt="icon" />
         </div>
       </div>
