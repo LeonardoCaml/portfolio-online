@@ -27,7 +27,7 @@ export default function Home() {
       </div>
       <div>
         <div className="mt-20 md:m-0 flex items-center justify-center">
-          <Image width={600} src={images.Ilustraçao} alt="icon" />
+          <Image width={550} src={images.Ilustraçao} alt="icon" />
         </div>
       </div>
     </div>
